@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ôn tập Quản lý dự án MP</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <img class="hero__image" src="assets/study-banner.png" alt="">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Quản lý dự án MP</p>
+          <h1>Ôn tập câu hỏi</h1>
+          <div class="hero__stats" aria-label="Thong ke bai lam">
+            <div>
+              <span id="totalQuestions">0</span>
+              <small>câu hỏi</small>
+            </div>
+            <div>
+              <span id="timer">00:00</span>
+              <small>thời gian</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard" aria-label="Bang dieu khien on tap">
+        <aside class="panel controls">
+          <label class="set-picker">
+            <span>Dạng đề</span>
+            <select id="quizSetSelect"></select>
+          </label>
+
+          <div class="score-grid">
+            <div class="score-card">
+              <span id="answeredCount">0</span>
+              <small>Đã làm</small>
+            </div>
+            <div class="score-card score-card--right">
+              <span id="correctCount">0</span>
+              <small>Đúng</small>
+            </div>
+            <div class="score-card score-card--wrong">
+              <span id="wrongCount">0</span>
+              <small>Sai</small>
+            </div>
+            <div class="score-card">
+              <span id="remainingCount">0</span>
+              <small>Còn lại</small>
+            </div>
+          </div>
+
+          <div class="progress-wrap" aria-label="Tien do">
+            <div class="progress-track">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <span id="progressText">0%</span>
+          </div>
+
+          <div class="tool-row" aria-label="Cong cu">
+            <button id="shuffleBtn" class="icon-button" type="button" title="Trộn câu hỏi và đáp án" aria-label="Trộn câu hỏi và đáp án">⟳</button>
+            <button id="resetBtn" class="icon-button" type="button" title="Làm lại" aria-label="Làm lại">↺</button>
+            <button id="finishBtn" class="text-button" type="button">Nộp bài</button>
+          </div>
+
+          <label class="search-box">
+            <span>Tìm câu</span>
+            <input id="searchInput" type="search" placeholder="Nhập từ khóa...">
+          </label>
+
+          <div id="questionNav" class="question-nav" aria-label="Danh sach cau hoi"></div>
+        </aside>
+
+        <section class="quiz-area">
+          <article class="panel question-card">
+            <div class="question-topline">
+              <span id="questionNumber">Câu 1</span>
+              <span id="questionState" class="state-pill">Chưa làm</span>
+            </div>
+            <h2 id="questionText"></h2>
+            <div id="optionsList" class="options-list"></div>
+
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+
+            <div class="nav-row">
+              <button id="prevBtn" class="text-button" type="button">Trước</button>
+              <button id="nextBtn" class="text-button text-button--primary" type="button">Tiếp</button>
+            </div>
+          </article>
+
+          <section id="resultPanel" class="panel result-panel" hidden>
+            <div>
+              <p class="eyebrow">Kết quả</p>
+              <h2 id="resultTitle"></h2>
+            </div>
+            <div class="result-grid">
+              <div><span id="resultCorrect">0</span><small>Đúng</small></div>
+              <div><span id="resultWrong">0</span><small>Sai/bỏ trống</small></div>
+              <div><span id="resultTime">00:00</span><small>Thời gian</small></div>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
